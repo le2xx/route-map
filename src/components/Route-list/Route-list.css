@@ -11,6 +11,7 @@
   border-radius: 2px;
   font-size: 18px;
   padding: 0 5px;
+  color: black;
 }
 
 .route-list__list-items {
@@ -24,3 +25,4 @@
   border-radius: 2px;
   border: none;
 }
+
