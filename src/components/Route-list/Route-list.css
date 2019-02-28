@@ -1,0 +1,26 @@
+.route-list {
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+  margin: 0 10px;
+}
+
+.route-list__input {
+  width: calc(100% - 10px);
+  border: none;
+  border-radius: 2px;
+  font-size: 18px;
+  padding: 0 5px;
+}
+
+.route-list__list-items {
+  list-style-type: none;
+  padding: 0;
+  line-height: 26px;
+}
+
+.route-list__button {
+  margin: 0 5px;
+  border-radius: 2px;
+  border: none;
+}

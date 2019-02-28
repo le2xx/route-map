@@ -7,10 +7,8 @@ class App extends Component {
   render() {
     return (
       <div className="app">
-        <header className="App-header">
           <RouteList/>
           <Map/>
-        </header>
       </div>
     );
   }
