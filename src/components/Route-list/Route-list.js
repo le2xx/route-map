@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import './Route-list.css';
 import ymaps from 'ymaps';
+import Dragula from 'react-dragula';
 
 class RouteList extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -31,6 +33,7 @@ class RouteList extends Component {
       const newPoints = this.state.points;
       newPoints.unshift(event.target.value);
       this.setState({points: newPoints});
+      this.setState({address: ''});
     }
   };
 
@@ -38,14 +41,24 @@ class RouteList extends Component {
     return str.length > len ? str.substring(0, len - 3) + '...' : str;
   };
 
+  dragulaDecorator = (componentBackingInstance) => {
+    if (componentBackingInstance) {
+      Dragula([componentBackingInstance], {});
+    }
+  };
+
   render() {
     return (
       <div className="route-list">
-        <input type="text" className="route-list__input" id="suggest" onKeyUp={this.addressFind} onKeyPress={this.addressAdd} placeholder="введите адрес ..."/>
-        <ul className="route-list__list-items">
+        <input type="text" className="route-list__input" id="suggest"
+          value={this.state.address}
+          onChange={this.addressFind}
+          onKeyPress={this.addressAdd}
+          placeholder="введите адрес ..."/>
+        <ul className="route-list__list-items" ref={this.dragulaDecorator}>
           {this.state.points.map((item, index) => (
             <li key={index} className="route-list__list-item">
-              {this.normalizeLenStr(item, 28)}
+              {this.normalizeLenStr(item, 27)}
               <button className="route-list__button" onClick={() => this.deleteListItem(this.state.points, index)}>Delete</button>
             </li>
           ))}

@@ -5,7 +5,9 @@
   "dependencies": {
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
-    "react-scripts": "2.1.5"
+    "react-dragula": "^1.1.17",
+    "react-scripts": "2.1.5",
+    "ymaps": "^0.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
